@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Existence Checks</title>
+    </head>
+    <body>
+        <h1>Form Daftar</h1>
+        <form name="formTugas" id="tugasku" action="" onsubmit="return validateForm()" method="POST">
+    Nama : <input type="text" name="username" id="username" placeholder="Username Masukan 3 -15 Karakter" > <br>
+    Password : <input type="password" name="password" id="pass" placeholder="Password" ><br>
+    Ulang Password: <input type="password" name="repeat" id="repeat" placeholder="Ulangi Password"><br>
+    Email: <input type="text" name="email" id="email" placeholder="Email"><br>
+    Telepon<input type="text" name="telp" id="telp" placeholder="NomorTelpon"><br>
+    Alamat : <textarea id="alamat" style="width: 167px;" required></textarea><br>
+    
+    <input type="submit" name="" value="submit">
+    </form>
+    
+    <script type="text/javascript">
+    function validateForm(){
+    var username = document.formTugas.username.value;
+    var pass = document.getElementById('pass').value;
+    var repeat = document.getElementById('repeat').value;
+    var rs = document.formTugas.email.value;
+    var atps=rs.indexOf("@");
+    var dots=rs.lastIndexOf(".");
+    var telp = document.formTugas.telp.value;
+    var alamat = document.formTugas.alamat.value;
+    
+    if(username.length <3 || username.length >15){ 
+        alert("Username harus 3-15 karakter"); 
+        return false;
+        }
+     if (pass != repeat) {
+    alert("Password Tidak")
+    } else {
+        alert("Password ");
+    }
+     
+    if (atps<1 || dots<atps+2 ||
+    dots+2>=rs.length) {
+    alert("Alamat email tidak valid!!!!");
+    
+    }
+     return false;  
+     
+    if (telp.length <10 || telp.length >=12 ){
+    alert("Nomer telepon 10 - 12 digit");
+    return false;
+    }
+     
+    }
+    
+    </script>
+    <H6>Christine Chlyw Nova - 3411171164</H6>
+    </body>
+    
+</html>
